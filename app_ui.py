@@ -16,7 +16,7 @@ from prompts import USER_PROMPT_FOR_MAIN_AGENT, WEDDING_PLANNER_AGENT_PROMPT
 
 
 APP_TITLE = "Multi-Agent Wedding Planner"
-MODEL_NAME = "gpt-5-nano"
+MODEL_NAME = "llama"
 REQUIRED_KEYS = ("TAVILY_API_KEY")
 
 STYLE_OPTIONS = [
@@ -861,7 +861,7 @@ def render_brief_form(runtime_ready: bool) -> bool:
         st.markdown('<div class="field-group-title">Budget and Direction</div>', unsafe_allow_html=True)
         budget_col, tone_col = st.columns([1.1, 1])
         with budget_col:
-            st.selectbox("Currency", ["USD", "EUR", "GBP", "CAD", "AUD"], key="currency")
+            st.selectbox("Currency", ["USD", "EUR", "GBP", "CAD", "AUD", "PKR"], key="currency")
             st.slider(
                 "Budget range",
                 min_value=5000,

@@ -25,6 +25,7 @@ def assign_to_subagent1(query: str) -> str:
 @tool
 def assign_to_subagent2(query: str) -> str:
     """Delegate a research query to SubAgent2 and return its response."""
+    
     logging.info(f"Assigning query to subagent2: {query}")
     response = subagent2.invoke({"messages" : [HumanMessage(content=query)]})
     return response["messages"][-1].content
